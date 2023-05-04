@@ -1,0 +1,267 @@
+﻿@using Microsoft.Data.SqlClient;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*@
+
+
+
+<h2> Your Cart</h2>
+<br />
+@{
+    int totalPrice = 0;
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cart ID</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CartModel cart in @ViewBag.CartsList)
+        {
+            <tr>
+                <td>@cart.Cart_Id</td>
+                <td>@cart.Product_Name</td>
+                <td>
+                    <span class="quantity">@cart.Quantity</span>
+                    <button class="btn btn-primary add" data-price="@cart.Price"> + Add</button>
+                    <button class="btn btn-primary remove" data-price="@cart.Price"> - Remove</button>
+                </td>
+                <td class="price">@cart.Price</td>
+                <td>
+                    @*<button class="btn btn-primary remove-item" type="submit">Remove from Cart</button>*@
+                    @*<form id="removeItemForm" method="POST" action="/Cart/RemoveCartItem">
+                        <input type="hidden" name="Cart_Id" id="cartIdField">
+                        <button class="btn btn-primary remove-item" type="submit">Remove from Cart</button>
+                    </form>*@
+                    <button class="btn btn-primary remove-item" type="button" data-cartid="@cart.Cart_Id">Remove from Cart</button>
+
+                </td>
+                @*<th>@cart.Quantity</th>
+                <th>@cart.Price</th>
+                <th>
+                    <button class="btn btn-primary" type="submit"> + Add</button>
+                    <button class="btn btn-primary" type="submit"> - Remove</button>
+                </th>*@
+            </tr>
+            
+            @*totalPrice += cart.Price * cart.Quantity;*@
+            
+
+        }
+        @*<tr>
+            <td colspan="3"></td>
+            <td><strong>Total:</strong></td>
+            <td class="total-price">@totalPrice</td>
+        </tr>*@
+    </tbody>
+</table>
+
+@foreach (var cartItem in @ViewBag.CartsList)
+{
+    totalPrice += cartItem.Price;
+}
+@*<button class="btn btn-primary"> Place Order </button>*@
+
+@{
+    // Retrieve the count of items in the cart table
+    int cartItemCount = 0;
+    string connectionString = "Data Source=5CG7324TYL;Initial Catalog = FashionDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+    string query = "SELECT COUNT(*) FROM Carts";
+
+    using (SqlConnection connection = new SqlConnection(connectionString))
+    {
+        SqlCommand command = new SqlCommand(query, connection);
+        connection.Open();
+        cartItemCount = (int)command.ExecuteScalar();
+    }
+
+    // Check if the cart table is not empty
+    if (cartItemCount > 0)
+    {
+        // Render the order button
+        <a href="/Cart/Order">
+            <button class="btn btn-primary float-right"> Order !</button>
+        </a>
+    }
+}
+
+
+@*<a href="/Cart/Order"><button class="btn btn-primary float-right"> Order !</button></a>*@
+
+
+@*<button class="btn btn-primary" data-toggle="modal" data-target="#orderModal">Place Order</button>*@
+@*<div>
+    <button type="submit" class="btn btn-primary">Confirm Order</button>
+</div>*@
+
+<!-- Modal popup element -->
+@*<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Place Your Order</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Add form elements for placing order -->
+                <dl>
+                    @foreach (var cartItem in @ViewBag.CartsList)
+                    {
+                        <dt>@cartItem.Product_Name</dt>
+                        <dd>
+                            Quantity: @cartItem.Quantity<br />
+                            Price: @cartItem.Price
+                        </dd>
+                        totalPrice += cartItem.Price * cartItem.Quantity;
+                    }
+                </dl>
+                <p>Total Amount: @totalPrice</p>
+                <form method="post" action="@Url.Action("PlaceOrder")">
+                    <div class="form-group">
+                        <label for="userEmail">Email</label>
+                        <input type="email" class="form-control" id="userEmail" name="userEmail" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Order</button>
+                </form>
+
+                @*<div>
+                    <form>
+                        <label for="email">Enter your email:</label>
+                        <input type="email" id="email" placeholder="Your Email" name="email" required>
+                    </form>
+                </div>
+                <br />
+                <div>
+                    <button type="submit" class="btn btn-primary">Order</button>
+                </div>
+                <br/>
+                
+                <br />
+                <div>
+                    <button type="submit" class="btn btn-primary">Payment</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                @*<button type="button" class="btn btn-primary">Place Order</button>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#myModal').modal('show');
+        $('.add, .remove').click(function () {
+            var $quantity = $(this).siblings('.quantity');
+            var $price = $(this).data('price');
+            var newQuantity = parseInt($quantity.text());
+            if ($(this).hasClass('add')) {
+                newQuantity += 1;
+            } else {
+                newQuantity -= 1;
+                if (newQuantity < 1) {
+                    newQuantity = 1;
+                }
+            }
+            var newPrice = newQuantity * $price;
+            $quantity.text(newQuantity);
+            $(this).parents('tr').find('.price').text(newPrice);
+
+            var cartId = $(this).closest('tr').find('td:first-child').text();
+            $.ajax({
+                type: "POST",
+                url: "/Cart/UpdateCartItem",
+                data: { "Cart_Id": cartId, "Quantity": newQuantity, "Price": newPrice },
+                success: function () {
+                    // Update the UI
+                    //updateTotalPrice();
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                }
+            });
+        });
+        
+        $('.remove-item').click(function () {
+            var cartId = $(this).data('cartid');
+            if (confirm("Are you sure you want to remove item " + cartId + " from your cart?")) {
+                // User clicked "OK"
+                $.ajax({
+                    type: "POST",
+                    url: "/Cart/RemoveCartItem",
+                    data: { "Cart_Id": cartId },
+                    success: function () {
+                        // Update the UI
+                        location.reload();
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                    }
+                });
+            } else {
+                // User clicked "Cancel"
+                // Do nothing
+            }
+        });
+        //function updateTotalPrice() {
+        //    var totalPrice = 0;
+        //    $('.price').each(function () {
+        //        var price = parseFloat($(this).text());
+        //        if (!isNaN(price)) {
+        //            totalPrice += price;
+        //        }
+        //    });
+        //    if (!isNaN(removedPrice)) {
+        //        totalPrice -= removedPrice;
+        //    }
+        //    $('.total-price').text(totalPrice.toFixed(2));
+        //    //$('.price').each(function () {
+        //    //    var price = parseFloat($(this).text());
+        //    //    totalPrice += isNaN(price) ? 0 : price;
+        //    //});
+        //    //$('.total-price').text(totalPrice.toFixed(2));
+        //}
+
+        //updateTotalPrice();
+    });
+
+    //$(document).ready(function () {
+    //    $('.add').click(function () {
+    //        var $quantity = $(this).siblings('.quantity');
+    //        var $price = $(this).data('price');
+    //        var newQuantity = parseInt($quantity.text()) + 1;
+    //        var newPrice = newQuantity * $price;
+    //        $quantity.text(newQuantity);
+    //        $(this).parents('tr').find('.price').text(newPrice);
+    //    });
+
+    //    $('.remove').click(function () {
+    //        var $quantity = $(this).siblings('.quantity');
+    //        var $price = $(this).data('price');
+    //        var newQuantity = parseInt($quantity.text()) - 1;
+    //        if (newQuantity < 1) {
+    //            newQuantity = 1;
+    //        }
+    //        var newPrice = newQuantity * $price;
+    //        $quantity.text(newQuantity);
+    //        $(this).parents('tr').find('.price').text(newPrice);
+    //    });
+    //});
+</script>

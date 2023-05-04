@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Order Id</th>
+            <th>Order Date</th>
+            <th>Total Amount</th>
+            <th>User Email</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (OrderModel order in ViewBag.OrdersList)
+        {
+            <tr>
+                <td>@order.Order_Id</td>
+                <td>@order.Order_Date</td>
+                <td>@order.Total_amount</td>
+                <td>@order.User_Email</td>
+                <td>
+                    <form asp-action="Download" asp-controller="UserOrders">
+                        <input type="hidden" value="@order.Order_Id" name="OrderId" />
+                        <input type="hidden" value="@order.Order_Date" name="OrderDate" />
+                        <input type="hidden" value="@order.Total_amount" name="TotalAmount" />
+                        <input type="hidden" value="@order.User_Email" name="UserEmail" />
+
+                        <button class="btn btn-primary">Download!</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>OrderItem Id</th>
+            <th>Order Id</th>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Color</th>
+            <th>Size</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>UserEmail</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (OrderItemModel order in ViewBag.OrdersItemList)
+        {
+            <tr>
+                <td>@order.OrderItem_Id</td>
+                <td>@order.Order_Id</td>
+                <td>@order.Product_Id</td>
+                <td>@order.Product_Name</td>
+                <td>@order.Color</td>
+                <td>@order.Size</td>
+                <td>@order.Quantity</td>
+                <td>@order.Price</td>
+                <td>@order.User_Email</td>
+            </tr>
+        }
+    </tbody>
+</table>

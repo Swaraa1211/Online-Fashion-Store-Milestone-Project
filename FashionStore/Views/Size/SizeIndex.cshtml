@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h2>Add Size</h2>
+
+<a href="/Size/Create"><button class="btn-primary float-right"> + Add Size</button></a>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Size ID</th>
+			<th>Size Name</th>
+			<th> Edit / Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (@ViewBag.status != "Update")
+		{
+			@foreach (SizeModel size in @ViewBag.SizeList)
+			{
+				<tr>
+					<td>@size.Size_Id</td>
+					<td>@size.Size_Name</td>
+					<td>
+						<div>
+							<a href="/Size/SizeIndex?opnMode=Update&Size_Id=@size.Size_Id">
+								<button class="btn btn-outline-secondary">Update</button>
+							</a>
+							<a href="/Size/SizeIndex?opnMode=Delete&Size_Id=@size.Size_Id"><button class="btn btn-outline-danger">Delete</button></a>
+						</div>
+					</td>
+				</tr>
+			}
+		}
+		else
+		{
+
+			@foreach (SizeModel size in @ViewBag.SizeList)
+			{
+				@if (@ViewBag.Size_Id != size.Size_Id.ToString())
+				{
+					<tr>
+						<td>@size.Size_Id</td>
+						<td>@size.Size_Name</td>
+						<td></td>
+					</tr>
+				}
+				else
+				{
+					<form method="post" asp-controller="Size" asp-action="SizeIndex">
+						<input name="Size_Id" value="@size.Size_Id" size="1" type="hidden" />
+					<tr>
+						<td>@size.Size_Id</td>
+						<td><input name="Color_Name" value="@size.Size_Name" /></td>
+						<td>
+							<div>
+								<button class="btn btn-outline-secondary" type="submit">Confirm</button>
+								<a href="/Size/SizeIndex" class="btn btn-outline-danger">Cancel</a>
+							</div>
+						</td>
+					</tr>
+					</form>
+				}
+
+			}
+		}
+	</tbody>
+</table>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FashionStore.Models.ColorModel>
+
+@{
+    ViewData["Title"] = "ColorAPIIndex";
+}
+
+<h1>ColorAPIIndex</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Color_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color_Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color_Id)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color_Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Color_Id">Edit</a> |
+               @* <a asp-action="Details" asp-route-id="@item.Color_Id">Details</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.Color_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

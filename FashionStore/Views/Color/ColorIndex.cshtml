@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h2>Add Colors</h2>
+
+<a href="/Color/Create"><button class="btn-primary float-right"> + Add Color</button></a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Color ID</th>
+            <th>Color Name</th>
+            <th> Edit / Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+		@if (@ViewBag.status != "Update")
+		{
+			@foreach (ColorModel color in @ViewBag.ColorList)
+			{
+				<tr>
+					<td>@color.Color_Id</td>
+					<td>@color.Color_Name</td>
+					<td>
+						<div>
+							<a href="/Color/ColorIndex?opnMode=Update&Color_Id=@color.Color_Id">
+								<button class="btn btn-outline-secondary">Update</button>
+							</a>
+							<a href="/Color/ColorIndex?opnMode=Delete&Color_Id=@color.Color_Id"><button class="btn btn-outline-danger">Delete</button></a>
+						</div>
+					</td>
+				</tr>
+			}
+		}
+		else
+		{
+
+			@foreach (ColorModel color in @ViewBag.ColorList)
+			{
+				@if (@ViewBag.Color_Id != color.Color_Id.ToString())
+				{
+					<tr>
+						<td>@color.Color_Id</td>
+						<td>@color.Color_Name</td>
+						<td></td>
+					</tr>
+				}
+				else
+				{
+					<form method="post" asp-controller="Color" asp-action="ColorIndex">
+						<input name="Color_Id" value="@color.Color_Id" size="1" type="hidden" />
+					<tr>
+						<td>@color.Color_Id</td>
+						<td><input name="Color_Name" value="@color.Color_Name" /></td>
+						<td>
+							<div>
+								<button class="btn btn-outline-secondary" type="submit">Confirm</button>
+								<a href="/Color/ColorIndex" class="btn btn-outline-danger">Cancel</a>
+							</div>
+						</td>
+					</tr>
+					</form>
+				}
+
+			}
+		}
+    </tbody>
+</table>

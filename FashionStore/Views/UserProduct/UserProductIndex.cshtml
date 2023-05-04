@@ -1,0 +1,287 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<ProductsModel>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/style.css">
+    <style>
+        #t-cards .card {
+            border-radius: 5px;
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+
+            #t-cards .card:hover {
+                transform: translateY(-10px);
+            }
+
+        /*.card-deck {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            margin-right: 20px;
+            width: 17rem;
+            flex: 1 1 auto;
+        }*/
+
+        .card-deck .card {
+            flex: 1 0 20rem;
+        }
+
+        .my-dl {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-body-custom {
+            font-family: "Helvetica Neue", Helvetica;
+            font-size: 16px;
+        }
+
+
+    </style>
+</head>
+<body>
+<h2> Products!!!!</h2>
+@*<br />*@
+
+    @*<div class="container" style="margin-top: 50px;">
+        <div class="row" id="t-cards">
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="/images/img1.png" alt="img1">
+                    <div class="card-body">
+                        <h3 class="text-center">Shirt1</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="/images/img2.png" alt="">
+                    <div class="card-body">
+                        <h3 class="text-center">Shirt1</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="/images/img3.png" alt="">
+                    <div class="card-body">
+                        <h3 class="text-center">Shirt1</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
+
+@*@if (Model != null)
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Desc</th>
+                <th>Color</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Add to Cart</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Product_Id</td>
+                    <td>@product.Product_Name</td>
+                    <td>@product.Product_Description</td>
+                    <td>@product.Color</td>
+                    <td>@product.Size</td>
+                    <td>@product.Price</td>
+                    <td>
+                        <a asp-action="EditUserProduct" asp-route-id="@product.Product_Id"><button class="btn btn-primary" type="submit">Edit</button></a>
+                    </td>
+                    <td>
+@*                        <a asp-action="AddToCart" asp-route-id="@product.Product_Id"><button class="btn btn-primary" type="submit">AddToCart</button></a>
+*@
+                        @*<a asp-action="AddToCart" asp-route-id="@product.Product_Id" >
+                            <button class="btn btn-primary" type="submit" >AddToCart</button>
+                        </a>
+
+                        @{
+                            int productId = product.Product_Id;
+                            string? productName = product.Product_Name;
+                            decimal price = product.Price;
+                        }
+                        <form method="post" asp-action="AddToCart">
+                            <input type="hidden" name="product_id" value="@productId" />
+                            <input type="hidden" name="product_name" value="@productName" />
+                            <input type="hidden" name="price" value="@price" />
+                                <button class="btn btn-primary" type="submit">ADD TO CART</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+*@
+
+
+@if (Model != null)
+{<div class="container" style="margin-top: 50px;">
+        <div class="row" id="t-cards">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-3 py-3 py-md-0">
+                    <div class="card-deck d-flex flex-wrap text-center align-items-center">
+                    <div class="card border-dark mb-3 flex-fill">
+                        <br/>
+                            <img src="@product.Product_Image" class="mx-auto" style="width: 200px; height: 200px;" alt="">
+                                <div class="card-body card-body-custom">
+                            <dl>
+                                        <dd><b>Product Name:</b> <i>@product.Product_Name </i></dd>
+                                        <dd><i> @product.Product_Description </i> </dd>
+                                        <dd><b>Color:</b> <span style="color: @product.Color"> @product.Color </span> &nbsp; <b>Size:</b> @product.Size </dd>
+                                @*<dd>@product.Size </dd>*@
+                                    <dd><b>Price:</b> ₹@product.Price </dd>
+                               @* <dd><a asp-action="EditUserProduct" asp-route-id="@product.Product_Id"><button class="btn btn-primary" type="submit">Edit</button></a></dd>*@
+                                <dd>
+                                    <dl class="my-dl">
+                                            <dd>
+                                                <a asp-action="EditUserProduct" asp-route-id="@product.Product_Id"><button class="btn btn-primary" type="submit">Edit</button></a></dd>
+                                    @{
+                                        int productId = product.Product_Id;
+                                        string? productName = product.Product_Name;
+                                        decimal price = product.Price;
+                                    }
+                                        <dd>
+                                    <form method="post" asp-action="AddToCart">
+                                        <input type="hidden" name="product_id" value="@productId" />
+                                        <input type="hidden" name="product_name" value="@productName" />
+                                        <input type="hidden" name="price" value="@price" />
+                                        <button class="btn btn-primary" type="submit">AddToCart</button>
+                                    </form>
+                                            </dd>
+                                        </dl>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    }
+    </div>
+    </div>
+}
+</body>
+
+@*@if (Model != null)
+{
+    @foreach (var product in Model)
+    {
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card-columns">
+                <div class="card border-dark mb-3">
+                    <img src="@product.Product_Description" alt="">
+                    <div class="card-body">
+                        <dl>
+                            <dd>@product.Product_Name </dd>
+                            <dd>@product.Product_Description </dd>
+                            <dd>@product.Color </dd>
+                            <dd>@product.Size </dd>
+                            <dd>@product.Price </dd>
+                            <dd><a asp-action="EditUserProduct" asp-route-id="@product.Product_Id"><button class="btn btn-primary" type="submit">Edit</button></a></dd>
+                            <dd>
+                                @{
+                                    int productId = product.Product_Id;
+                                    string? productName = product.Product_Name;
+                                    decimal price = product.Price;
+                                }
+                                <form method="post" asp-action="AddToCart">
+                                    <input type="hidden" name="product_id" value="@productId" />
+                                    <input type="hidden" name="product_name" value="@productName" />
+                                    <input type="hidden" name="price" value="@price" />
+                                    <button class="btn btn-primary" type="submit">ADD TO CART</button>
+                                </form>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    }
+}*@
+
+@*<h2> Products!!!!</h2>
+<br />
+
+
+<table class="table">
+    <thead>
+        
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Desc</th>
+            <th>Color</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Edit</th>
+            <th>Add to Cart</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ProductsModel products in @ViewBag.ProductsList)
+        {
+
+            <tr>
+                <td>@products.Product_Id</td>
+                <td>@products.Product_Name</td>
+                <td>@products.Product_Description</td>
+                <td>@products.Color</td>
+                <td>@products.Size</td>
+                <td>@products.Price</td>
+                <td>
+                    <a asp-action="EditUserProduct" asp-route-id="@products.Product_Id"><button class="btn btn-primary" type="submit">Edit</button></a>
+                </td>
+                <td>
+                    <form method="post" asp-action="AddToCart">
+                    <input type="hidden" name="product_id" value="@products.Product_Id" />
+                    <input type="hidden" name="product_name" value="@products.Product_Name" />
+                    <input type="hidden" name="price" value="@products.Price" />
+                    <input type="number" name="quantity" value="1" min="1" />
+                    <button type="submit">ADD TO CART</button>
+                    </form>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+*@
