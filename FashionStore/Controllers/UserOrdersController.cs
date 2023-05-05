@@ -1,6 +1,7 @@
 ﻿using FashionStore.Models;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using NuGet.Protocol;
@@ -10,6 +11,7 @@ using System.Text;
 
 namespace FashionStore.Controllers
 {
+    [Authorize]
     public class UserOrdersController : Controller
     {
         IConfiguration _configuration;

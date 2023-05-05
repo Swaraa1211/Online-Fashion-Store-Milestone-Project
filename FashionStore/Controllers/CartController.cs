@@ -1,4 +1,5 @@
 ﻿using FashionStore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Razorpay.Api;
@@ -8,6 +9,7 @@ using System.Text;
 
 namespace FashionStore.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
         IConfiguration _configuration;

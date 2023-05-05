@@ -8,6 +8,13 @@ a.navbar-brand[b-pdrs3zvd1v] {
   word-break: break-all;
 }
 
+/* CSS file */
+
+.navbar[b-pdrs3zvd1v] {
+    background-color: #FFFACD;
+}
+
+
 a[b-pdrs3zvd1v] {
   color: #0077cc;
 }

@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\StockSnap_ZDVS9WWEL1.jpg",
+      "PackagePath": "staticwebassets\\images\\StockSnap_ZDVS9WWEL1.jpg"
+    },
+    {
       "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\background.png",
       "PackagePath": "staticwebassets\\images\\background.png"
     },
@@ -61,8 +65,16 @@
       "PackagePath": "staticwebassets\\images\\img3.png"
     },
     {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\jeans.jpg",
+      "PackagePath": "staticwebassets\\images\\jeans.jpg"
+    },
+    {
       "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\kurta.jpeg",
       "PackagePath": "staticwebassets\\images\\kurta.jpeg"
+    },
+    {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\kurti.jpg",
+      "PackagePath": "staticwebassets\\images\\kurti.jpg"
     },
     {
       "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\pant1.png",
@@ -83,6 +95,10 @@
     {
       "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\shawl.jpg",
       "PackagePath": "staticwebassets\\images\\shawl.jpg"
+    },
+    {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\shawl1.jpg",
+      "PackagePath": "staticwebassets\\images\\shawl1.jpg"
     },
     {
       "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\shirt1.png",
@@ -109,8 +125,36 @@
       "PackagePath": "staticwebassets\\images\\w1.png"
     },
     {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\w2.jpg",
+      "PackagePath": "staticwebassets\\images\\w2.jpg"
+    },
+    {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\w3.jpg",
+      "PackagePath": "staticwebassets\\images\\w3.jpg"
+    },
+    {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\watch.jpg",
+      "PackagePath": "staticwebassets\\images\\watch.jpg"
+    },
+    {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\watch1.jpg",
+      "PackagePath": "staticwebassets\\images\\watch1.jpg"
+    },
+    {
       "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\wed.jpg",
       "PackagePath": "staticwebassets\\images\\wed.jpg"
+    },
+    {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\weddings.jpg",
+      "PackagePath": "staticwebassets\\images\\weddings.jpg"
+    },
+    {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\womens.jpg",
+      "PackagePath": "staticwebassets\\images\\womens.jpg"
+    },
+    {
+      "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\images\\wrist.jpg",
+      "PackagePath": "staticwebassets\\images\\wrist.jpg"
     },
     {
       "Id": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\wwwroot\\js\\site.js",

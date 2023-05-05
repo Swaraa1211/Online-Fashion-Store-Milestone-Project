@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace FashionStore.Controllers
 {
-    
+    [Authorize]
     public class ProductsController : Controller
     {
         IConfiguration _configuration;

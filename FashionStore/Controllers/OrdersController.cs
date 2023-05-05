@@ -1,10 +1,12 @@
 ﻿using FashionStore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Razorpay.Api;
 
 namespace FashionStore.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         IConfiguration _configuration;

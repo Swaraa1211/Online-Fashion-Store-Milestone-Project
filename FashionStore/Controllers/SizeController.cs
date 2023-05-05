@@ -1,9 +1,11 @@
 ﻿using FashionStore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
 namespace FashionStore.Controllers
 {
+    [Authorize]
     public class SizeController : Controller
     {
         IConfiguration _configuration;

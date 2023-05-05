@@ -14,7 +14,9 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #fffde7;
+    background-image: linear-gradient(#fffde7, #fce4ec);
 }
 .container-login-register {
     display: flex;

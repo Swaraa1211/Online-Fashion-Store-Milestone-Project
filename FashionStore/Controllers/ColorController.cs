@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Http;
 using System.Data;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FashionStore.Controllers
 {
+    [Authorize]
     public class ColorController : Controller
     {
         Uri baseAddress = new Uri("https://localhost:7285/api/");
