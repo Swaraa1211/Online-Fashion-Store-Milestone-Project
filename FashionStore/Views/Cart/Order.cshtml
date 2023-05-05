@@ -1,17 +1,19 @@
-﻿@*
+﻿@using Azure.Core;
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 @{
     int totalPrice = 0;
-    int orderId = 0; 
+    //int orderId = (int)RouteData.Values["OrderId"];
 }
+
+
 
 <div>
     <dl>
@@ -31,31 +33,20 @@
 <button class="btn btn-primary" data-toggle="modal" data-target="#orderModal">Place Order</button>
 
 <br />
-@*<div>
-    <button type="submit" class="btn btn-primary">Payment</button>
-</div>*@
-@*<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LkIbYF6yJj354f" async> </script> </form>
-*@
 
-
-@*<form>
-    <!-- other form fields -->
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-    </div>
-    <button onclick="payWithRazorpay()">Pay Now</button>
-</form>*@
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<button onclick="payWithRazorpay(@ViewBag.OrderId)">Pay Now</button>
+<button onclick="payWithRazorpay()">Pay Now</button>
 <script>
-    function payWithRazorpay(orderId) {
-       
+    function payWithRazorpay() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('OrderId');
+
+       console.log(orderId);
         var options = {
             "key": "rzp_test_lGtoo0JUu1Sqpn",
             "amount": "@(totalPrice * 100)",
-            "order_id": orderId,
+            "id": orderId,
             "handler": function (response) {
                 // Handle the payment response here
                 $.ajax({
@@ -63,7 +54,7 @@
                     url: "/Cart/OrderAmountDeleteCart",
                     data: {
                         amount: options.amount,
-                        orderId: options.order_id
+                        orderId: options.id
                     },
                     success: function () {
                         window.location.href = "/Cart/CartIndex";
@@ -135,3 +126,18 @@
     </div>
 </div>
 
+@*<div>
+    <button type="submit" class="btn btn-primary">Payment</button>
+</div>*@
+@*<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LkIbYF6yJj354f" async> </script> </form>
+*@
+
+
+@*<form>
+    <!-- other form fields -->
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+    </div>
+    <button onclick="payWithRazorpay()">Pay Now</button>
+</form>*@

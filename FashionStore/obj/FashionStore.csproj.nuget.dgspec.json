@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VS Code\\FashionStore\\FashionStore.csproj": {}
+    "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\FashionStore.csproj": {}
   },
   "projects": {
-    "D:\\VS Code\\FashionStore\\FashionStore.csproj": {
+    "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\FashionStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VS Code\\FashionStore\\FashionStore.csproj",
+        "projectUniqueName": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\FashionStore.csproj",
         "projectName": "FashionStore",
-        "projectPath": "D:\\VS Code\\FashionStore\\FashionStore.csproj",
+        "projectPath": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\FashionStore.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\VS Code\\FashionStore\\obj\\",
+        "outputPath": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

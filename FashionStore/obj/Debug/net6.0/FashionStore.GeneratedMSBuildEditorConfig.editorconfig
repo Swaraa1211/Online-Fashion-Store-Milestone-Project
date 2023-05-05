@@ -9,153 +9,149 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FashionStore
 build_property.RootNamespace = FashionStore
-build_property.ProjectDir = D:\VS Code\FashionStore\
+build_property.ProjectDir = D:\VS Code\Online Fashion Store - Milestone Project\FashionStore\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\VS Code\FashionStore
+build_property.MSBuildProjectDirectory = D:\VS Code\Online Fashion Store - Milestone Project\FashionStore
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/VS Code/FashionStore/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Cart/CartIndex.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Cart/CartIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0SW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Cart/Order.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Cart/Order.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Color/ColorAPIIndex.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Color/ColorAPIIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcQ29sb3JBUElJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Color/ColorIndex.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Color/ColorIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcQ29sb3JJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Color/Create.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Color/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Color/CreateColor.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Color/CreateColor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcQ3JlYXRlQ29sb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Color/Delete.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Color/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Color/Edit.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Color/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3JcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Home/Index.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/VS Code/FashionStore/Views/Orders/OrderIndex.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Orders/OrderIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXE9yZGVySW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Products/CreateProducts.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Products/CreateProducts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlUHJvZHVjdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Products/DeleteProduct.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Products/DeleteProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Products/EditProduct.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Products/EditProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Products/ProductIndex.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Products/ProductIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUHJvZHVjdEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Shared/Error.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Shared/_LoginPartial.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Size/Create.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Size/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l6ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Size/SizeIndex.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Size/SizeIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l6ZVxTaXplSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/UserOrders/UserOrderIndex.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/UserOrders/UserOrderIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck9yZGVyc1xVc2VyT3JkZXJJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/UserProduct/AddToCart.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/UserProduct/AddToCart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2R1Y3RcQWRkVG9DYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/UserProduct/EditUserProduct.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/UserProduct/EditUserProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2R1Y3RcRWRpdFVzZXJQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/UserProduct/UserProductIndex.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/UserProduct/UserProductIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2R1Y3RcVXNlclByb2R1Y3RJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/_ViewImports.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/_ViewStart.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code/FashionStore/Views/Shared/_Layout.cshtml]
+[D:/VS Code/Online Fashion Store - Milestone Project/FashionStore/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-pdrs3zvd1v

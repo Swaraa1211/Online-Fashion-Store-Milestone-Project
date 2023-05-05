@@ -11,7 +11,7 @@
 
 
 
-<h2> Your Cart</h2>
+<h2 style="text-align: center;"> Your Cart</h2>
 <br />
 @{
     int totalPrice = 0;
@@ -35,8 +35,8 @@
                 <td>@cart.Product_Name</td>
                 <td>
                     <span class="quantity">@cart.Quantity</span>
-                    <button class="btn btn-primary add" data-price="@cart.Price"> + Add</button>
-                    <button class="btn btn-primary remove" data-price="@cart.Price"> - Remove</button>
+                    <button class="btn btn-primary add" data-price="@cart.Price"> ➕ </button>
+                    <button class="btn btn-primary remove" data-price="@cart.Price">  ➖  </button>
                 </td>
                 <td class="price">@cart.Price</td>
                 <td>
@@ -45,7 +45,7 @@
                         <input type="hidden" name="Cart_Id" id="cartIdField">
                         <button class="btn btn-primary remove-item" type="submit">Remove from Cart</button>
                     </form>*@
-                    <button class="btn btn-primary remove-item" type="button" data-cartid="@cart.Cart_Id">Remove from Cart</button>
+                    <button class="btn btn-danger remove-item" type="button" data-cartid="@cart.Cart_Id"> X </button>
 
                 </td>
                 @*<th>@cart.Quantity</th>

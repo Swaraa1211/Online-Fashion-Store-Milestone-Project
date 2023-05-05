@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dzDIlzwE6IE4ZBfZfE8BpBYa6H8GAZNZ8HgId0yZd6E8fliyq72n3zw58xiwLUbvCo7qXAUx9CSCkWluR+WT+Q==",
+  "dgSpecHash": "JgyoK/rTvYb/Qzp9SqpFAZYMEmDkC5QBdWzJcsUWVeS5q8s4C6Kv7r3CB0b2fxbIh26ji9ROT9pjYHi2AO2ixQ==",
   "success": true,
-  "projectFilePath": "D:\\VS Code\\FashionStoreAPI\\FashionStoreAPI.csproj",
+  "projectFilePath": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStoreAPI\\FashionStoreAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

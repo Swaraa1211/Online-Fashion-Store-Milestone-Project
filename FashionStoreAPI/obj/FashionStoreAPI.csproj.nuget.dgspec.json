@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VS Code\\FashionStoreAPI\\FashionStoreAPI.csproj": {}
+    "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStoreAPI\\FashionStoreAPI.csproj": {}
   },
   "projects": {
-    "D:\\VS Code\\FashionStoreAPI\\FashionStoreAPI.csproj": {
+    "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStoreAPI\\FashionStoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VS Code\\FashionStoreAPI\\FashionStoreAPI.csproj",
+        "projectUniqueName": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStoreAPI\\FashionStoreAPI.csproj",
         "projectName": "FashionStoreAPI",
-        "projectPath": "D:\\VS Code\\FashionStoreAPI\\FashionStoreAPI.csproj",
+        "projectPath": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStoreAPI\\FashionStoreAPI.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\VS Code\\FashionStoreAPI\\obj\\",
+        "outputPath": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

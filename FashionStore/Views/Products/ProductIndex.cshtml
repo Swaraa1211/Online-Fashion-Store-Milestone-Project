@@ -4,11 +4,45 @@
 @{
 }
 
-<h2> Products!!!!</h2>
+<h2 style="text-align: center;"> Make New Products!!!!</h2>
 <br/>
-<a href="/Products/CreateProducts"><button class="btn-primary float-right"> + Add Product</button></a>
+<a href="/Products/CreateProducts"><button class="btn btn-primary "> + Add Product</button></a>
 
-<table class="table">
+<div class="container" style="margin-top: 50px;">
+    <div class="row" id="t-cards">
+        @foreach (ProductsModel products in @ViewBag.ProductsList)
+        {
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card-deck d-flex flex-wrap text-center align-items-center">
+                    <div class="card border-dark mb-3 flex-fill">
+                        <br />
+                        <img src="@products.Product_Image" class="mx-auto" style="width: 200px; height: 200px;" alt="">
+                        <div class="card-body card-body-custom">
+                            <dl>
+                                <dd><b>Product Id:</b> <i>@products.Product_Id </i></dd>
+                                <dd><b>Product Name:</b> <i>@products.Product_Name </i></dd>
+                                <dd><i> @products.Product_Description </i> </dd>
+                                <dd><b>Color:</b> <span style="color: @products.Color"> @products.Color </span> &nbsp; <b>Size:</b> @products.Size </dd>
+                                @*<dd>@product.Size </dd>*@
+                                <dd><b>Price:</b> ₹@products.Price </dd>
+                                @* <dd><a asp-action="EditUserProduct" asp-route-id="@product.Product_Id"><button class="btn btn-primary" type="submit">Edit</button></a></dd>*@
+                                <dd>
+                                    <dl class="my-dl">
+                                        <a asp-action="EditProduct" asp-route-id="@products.Product_Id"><button class="btn btn-primary" type="submit">Edit</button></a>
+                                        <a asp-action="DeleteProduct" asp-route-id="@products.Product_Id"><button class="btn btn-primary" type="submit">Delete</button></a>
+                                    </dl>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+
+@*<table class="table">
     <thead>
         <<tr>
             <th>Product ID</th>
@@ -42,3 +76,4 @@
         }
     </tbody>
 </table>
+*@

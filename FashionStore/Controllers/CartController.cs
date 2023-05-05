@@ -92,6 +92,7 @@ namespace FashionStore.Controllers
             return RedirectToAction("CartIndex");
         }
 
+        
         public IActionResult Order()
         {
             Connection();
@@ -115,6 +116,17 @@ namespace FashionStore.Controllers
 
             ViewBag.CartsList = _cartList;
 
+            //Console.WriteLine("in order" + OrderId);
+            
+            return View(ViewBag);
+        }
+
+        [HttpPost]
+        public IActionResult Order(int OrderId)
+        {
+            Connection();
+
+            Console.WriteLine("in order" + OrderId);
 
             return View(ViewBag);
         }
@@ -198,11 +210,17 @@ namespace FashionStore.Controllers
 
             Console.WriteLine("in place order: " + orderId);
 
+
             return RedirectToAction("Order", new { OrderId = orderId });
         }
 
+        //public ActionResult OrderAmountDeleteCart()
+        //{
+        //    return View();
+        //}
+
         [HttpPost]
-        public IActionResult OrderAmountDeleteCart( string amount, int orderId)
+        public IActionResult OrderAmountDeleteCart( int orderId)
         {
             Connection();
 
@@ -218,7 +236,7 @@ namespace FashionStore.Controllers
 
             //updating is paid or not
             Console.WriteLine("OrderIdfromrazor " + orderId);
-            Console.WriteLine("Amount " + amount);
+            //Console.WriteLine("Amount " + amount);
 
             string updateQuery = $"UPDATE Orders SET Is_Paid = 'Paid' WHERE Order_Id = @OrderId";
             using (SqlCommand sqlCommand = new SqlCommand(updateQuery, _connection))
@@ -240,6 +258,7 @@ namespace FashionStore.Controllers
             //string to = "deeshee1211@gmail.com";
             string? to = User.Identity?.Name;
             string from = "sai.swaroopa2001@gmail.com"; //From address    
+
             MailMessage message = new MailMessage(from, to);
             string mailbody = "Your order has been placed and payment is successfull.\n Your order will be shipped and delivered within 7 working days";
             message.Subject = "Order and Shippment details";
