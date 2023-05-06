@@ -19,6 +19,7 @@
           "Newtonsoft.Json": "13.0.3",
           "RazorPay.Core": "1.0.2",
           "Razorpay": "3.0.2",
+          "bootstrap": "5.2.3",
           "iTextSharp": "5.5.13.3"
         },
         "runtime": {
@@ -59,6 +60,7 @@
           }
         }
       },
+      "bootstrap/5.2.3": {},
       "BouncyCastle/1.8.9": {
         "runtime": {
           "lib/BouncyCastle.Crypto.dll": {
@@ -2753,6 +2755,13 @@
       "sha512": "sha512-EycyMsb6rD2PK9P0SyibFfEhvWWttdrYhyPF4f41uzdB/44yQlV+2Wehxyg489Rj6gbPvSPgbKq0xsHJBhipZA==",
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
+    },
+    "bootstrap/5.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tZZrH4HdqBr/oeUlGoc2KliYlwXeN3qyhKgc1B5dc585+lnMkcD4A5yIX2NmNoXCCagQQiQGKn7A97sWoo2AOw==",
+      "path": "bootstrap/5.2.3",
+      "hashPath": "bootstrap.5.2.3.nupkg.sha512"
     },
     "BouncyCastle/1.8.9": {
       "type": "package",

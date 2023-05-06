@@ -2,8 +2,11 @@ select * from AspNetUsers
 select * from AspNetUserRoles
 select * from AspNetRoles
 
+delete from AspNetUserRoles
+delete from AspNetRoles
+
+Insert into AspNetRoles values('admin1', 'Admin', 'ADMIN', '2023-05-02 14:30:00')
 Insert into AspNetUserRoles values('eba9ba51-d26e-4609-9d80-a0ce93865034', 'admin1')
-Insert into AspNetRoles values('admin1', 'ADMIN', 'ADMIN', '2023-05-02 14:30:00')
 
 
 CREATE TABLE Colors (

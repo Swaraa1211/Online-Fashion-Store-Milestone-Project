@@ -133,88 +133,159 @@ namespace FashionStore.Controllers
             return View(ViewBag);
         }
 
+        public IActionResult OrderPage()
+        {
+            Connection();
+
+            string query = "Select * from Carts";
+            using (SqlCommand sqlCommand = new SqlCommand(query, _connection))
+            {
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    CartModel cart = new CartModel();
+                    cart.Cart_Id = (int)reader["Cart_Id"];
+                    cart.Product_Name = (string)reader["Product_Name"];
+                    cart.Quantity = (int)reader["Quantity"];
+                    cart.Price = (int)reader["Price"];
+
+                    _cartList.Add(cart);
+                }
+                reader.Close();
+            }
+
+            ViewBag.CartsList = _cartList;
+
+            //Console.WriteLine("in order" + OrderId);
+
+            return View(ViewBag);
+        }
+
+        public ActionResult Payment()
+        {
+            Connection();
+
+            string query = "Select * from Carts";
+            using (SqlCommand sqlCommand = new SqlCommand(query, _connection))
+            {
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    CartModel cart = new CartModel();
+                    cart.Cart_Id = (int)reader["Cart_Id"];
+                    cart.Product_Name = (string)reader["Product_Name"];
+                    cart.Quantity = (int)reader["Quantity"];
+                    cart.Price = (int)reader["Price"];
+
+                    _cartList.Add(cart);
+                }
+                reader.Close();
+            }
+
+            ViewBag.CartsList = _cartList;
+
+            //Console.WriteLine("in order" + OrderId);
+
+            return View(ViewBag);
+        }
+
         [HttpPost]
         public IActionResult PlaceOrder(string userEmail)
         {
             Connection();
 
+            int orderId = 0;
+
             int totalPrice = Convert.ToInt32(Request.Form["totalPrice"]);
-            totalPrice = totalPrice / 2;
+            //totalPrice = totalPrice / 2;
             Console.WriteLine("Amount: " + totalPrice);
             //totalPrice = totalPrice / 100;
 
-            // Insert data into Orders table
-            string orderQuery = "INSERT INTO Orders (Order_Date,Total_Amount, User_Email) VALUES (@OrderDate,@Total_Amount, @UserEmail)";
-            using (SqlCommand sqlCommand = new SqlCommand(orderQuery, _connection))
+            string? Email = User.Identity?.Name;
+
+            if (userEmail != Email)
             {
-                sqlCommand.Parameters.AddWithValue("@OrderDate", DateTime.Now);
-                sqlCommand.Parameters.AddWithValue("@UserEmail", userEmail);
-                sqlCommand.Parameters.AddWithValue("@Total_Amount", totalPrice);
-                sqlCommand.ExecuteNonQuery();
+                TempData["Message"] = "Wrong Email";
+
             }
 
-            // Get the order ID of the newly inserted order
-            int orderId = 0;
-            string orderSelectQuery = "SELECT @@IDENTITY AS 'OrderId'";
-            using (SqlCommand sqlCommand = new SqlCommand(orderSelectQuery, _connection))
+            else
             {
-                SqlDataReader reader = sqlCommand.ExecuteReader();
-                if (reader.Read())
+                // Insert data into Orders table
+                string orderQuery = "INSERT INTO Orders (Order_Date,Total_Amount, User_Email) VALUES (@OrderDate,@Total_Amount, @UserEmail)";
+                using (SqlCommand sqlCommand = new SqlCommand(orderQuery, _connection))
                 {
-                    orderId = Convert.ToInt32(reader["OrderId"]);
+                    sqlCommand.Parameters.AddWithValue("@OrderDate", DateTime.Now);
+                    sqlCommand.Parameters.AddWithValue("@UserEmail", userEmail);
+                    sqlCommand.Parameters.AddWithValue("@Total_Amount", totalPrice);
+                    sqlCommand.ExecuteNonQuery();
                 }
-                reader.Close();
+
+                // Get the order ID of the newly inserted order
+                orderId = 0;
+                string orderSelectQuery = "SELECT @@IDENTITY AS 'OrderId'";
+                using (SqlCommand sqlCommand = new SqlCommand(orderSelectQuery, _connection))
+                {
+                    SqlDataReader reader = sqlCommand.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        orderId = Convert.ToInt32(reader["OrderId"]);
+                    }
+                    reader.Close();
+                }
+
+                //string color = "";
+                //string size = "";
+
+                //string query = $"SELECT p.Product_name, p.Color, p.Size, c.Quantity, c.Price" +
+                //                "FROM Products p INNER JOIN Carts c ON p.Product_Id = c.Product_Id;";
+
+                //using (SqlCommand sqlCommand = new SqlCommand(query, _connection))
+                //{
+                //    SqlDataReader reader = sqlCommand.ExecuteReader();
+                //    if (reader.Read())
+                //    {
+                //        color = (string)reader["Color"];
+
+                //        size = (string)reader["Size"];
+                //    }
+                //    reader.Close();
+                //}
+
+                // Insert data into OrderItem table
+                //string orderItemQuery = "INSERT INTO OrderItem (Order_Id, Product_Id, Product_name, Color, Size, Quantity, Price, User_Email) " +
+                //                "SELECT @OrderId, Product_Id, Product_Name,  Quantity, Price, @UserEmail FROM Carts"+
+                //                "SELECT @Color, @Size, FROM Products";
+
+                string orderItemQuery = "INSERT INTO OrderItem (Order_Id, Product_Id, Product_name, Color, Size, Quantity, Price, User_Email) " +
+                            "SELECT @OrderId, C.Product_Id, P.Product_name, P.Color, P.Size, C.Quantity, P.Price, @UserEmail " +
+                            "FROM Carts C " +
+                            "JOIN Products P ON C.Product_Id = P.Product_Id";
+
+
+
+                //string orderItemQuery = "INSERT INTO OrderItem (Order_Id, Product_Id, Product_name,Color,Size, Quantity, Price, User_Email) " +
+                //                        "SELECT @OrderId, Product_Id, Product_Name,Color,Size, Quantity, Price, @UserEmail FROM Carts";
+                using (SqlCommand sqlCommand = new SqlCommand(orderItemQuery, _connection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@OrderId", orderId);
+                    sqlCommand.Parameters.AddWithValue("@UserEmail", userEmail);
+                    //sqlCommand.Parameters.AddWithValue("@Color", color);
+                    //sqlCommand.Parameters.AddWithValue("@Size", size);
+
+                    sqlCommand.ExecuteNonQuery();
+                }
+
+                ViewBag.OrderId = orderId;
+
+                Console.WriteLine("in place order: " + orderId);
+                return RedirectToAction("Payment", new { OrderId = orderId });
             }
 
-            //string color = "";
-            //string size = "";
-
-            //string query = $"SELECT p.Product_name, p.Color, p.Size, c.Quantity, c.Price" +
-            //                "FROM Products p INNER JOIN Carts c ON p.Product_Id = c.Product_Id;";
-
-            //using (SqlCommand sqlCommand = new SqlCommand(query, _connection))
-            //{
-            //    SqlDataReader reader = sqlCommand.ExecuteReader();
-            //    if (reader.Read())
-            //    {
-            //        color = (string)reader["Color"];
-
-            //        size = (string)reader["Size"];
-            //    }
-            //    reader.Close();
-            //}
-
-            // Insert data into OrderItem table
-            //string orderItemQuery = "INSERT INTO OrderItem (Order_Id, Product_Id, Product_name, Color, Size, Quantity, Price, User_Email) " +
-            //                "SELECT @OrderId, Product_Id, Product_Name,  Quantity, Price, @UserEmail FROM Carts"+
-            //                "SELECT @Color, @Size, FROM Products";
-
-            string orderItemQuery = "INSERT INTO OrderItem (Order_Id, Product_Id, Product_name, Color, Size, Quantity, Price, User_Email) " +
-                        "SELECT @OrderId, C.Product_Id, P.Product_name, P.Color, P.Size, C.Quantity, P.Price, @UserEmail " +
-                        "FROM Carts C " +
-                        "JOIN Products P ON C.Product_Id = P.Product_Id";
-
-
-
-            //string orderItemQuery = "INSERT INTO OrderItem (Order_Id, Product_Id, Product_name,Color,Size, Quantity, Price, User_Email) " +
-            //                        "SELECT @OrderId, Product_Id, Product_Name,Color,Size, Quantity, Price, @UserEmail FROM Carts";
-            using (SqlCommand sqlCommand = new SqlCommand(orderItemQuery, _connection))
-            {
-                sqlCommand.Parameters.AddWithValue("@OrderId", orderId);
-                sqlCommand.Parameters.AddWithValue("@UserEmail", userEmail);
-                //sqlCommand.Parameters.AddWithValue("@Color", color);
-                //sqlCommand.Parameters.AddWithValue("@Size", size);
-
-                sqlCommand.ExecuteNonQuery();
-            }
-
-            ViewBag.OrderId = orderId;
-
-            Console.WriteLine("in place order: " + orderId);
-
-
-            return RedirectToAction("Order", new { OrderId = orderId });
+            return RedirectToAction("OrderPage");
         }
+
+      
 
         //public ActionResult OrderAmountDeleteCart()
         //{

@@ -1,23 +1,27 @@
 ﻿@using Azure.Core;
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*@
+
 
 @{
     int totalPrice = 0;
     //int orderId = (int)RouteData.Values["OrderId"];
 }
 
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 
 <div>
+    <br />
+    <br />
     <dl>
         @foreach (var cartItem in @ViewBag.CartsList)
         {
@@ -32,12 +36,16 @@
     <p>Total Amount: @totalPrice</p>
 </div>
 
-<button class="btn btn-primary" data-toggle="modal" data-target="#orderModal">Place Order</button>
+
+@*<button class="btn btn-primary" data-toggle="modal" data-target="#orderModal">Place Order</button>
+*@
+
+<a href="/Cart/OrderPage"><button class="btn btn-primary">Place Order</button></a>
 
 <br />
 
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+@*<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <button onclick="payWithRazorpay()">Pay Now</button>
 <script>
     function payWithRazorpay() {
@@ -71,7 +79,7 @@
         var rzp1 = new Razorpay(options);
         rzp1.open();
     }
-</script>
+</script>*@
 
 <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

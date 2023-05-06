@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace FashionStore.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class ProductsController : Controller
     {
         IConfiguration _configuration;
