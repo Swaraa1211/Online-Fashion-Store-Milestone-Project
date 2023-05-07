@@ -59,6 +59,7 @@ namespace FashionStore.Controllers
                     //orders.Price = (int)reader[0];
                     //orders.Products.Color = (string)reader[0];
                     //orders.Products.Size = (string)reader[0];
+                    orders.Paid = (string)reader["Is_Paid"];
                     orders.User_Email = (string)reader["User_Email"];
 
                     _ordersList.Add(orders);

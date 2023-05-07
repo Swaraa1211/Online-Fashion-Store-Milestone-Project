@@ -34,6 +34,7 @@
             <th style="background-color: #f0cf15;">Order Id</th>
             <th style="background-color: #f0cf15;">Order Date</th>
             <th style="background-color: #f0cf15;">Total Amount</th>
+            <th style="background-color: #f0cf15;">Payment</th>
             <th style="background-color: #f0cf15;">User Email</th>
             <th style="background-color: #f0cf15;">Download</th>
         </tr>
@@ -45,12 +46,14 @@
                 <td>@order.Order_Id</td>
                 <td>@order.Order_Date</td>
                 <td>@order.Total_amount</td>
+                <td>@order.Paid</td>
                 <td>@order.User_Email</td>
                 <td>
                     <form asp-action="Download" asp-controller="UserOrders">
                         <input type="hidden" value="@order.Order_Id" name="OrderId" />
                         <input type="hidden" value="@order.Order_Date" name="OrderDate" />
                         <input type="hidden" value="@order.Total_amount" name="TotalAmount" />
+                        <input type="hidden" value="@order.Paid" name="Paid" />
                         <input type="hidden" value="@order.User_Email" name="UserEmail" />
 
                         <button class="btn btn-primary">Download!</button>

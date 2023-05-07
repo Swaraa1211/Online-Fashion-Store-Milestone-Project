@@ -51,6 +51,7 @@ namespace FashionStore.Controllers
                     orders.Order_Date = (DateTime)reader["Order_Date"];
                     orders.Total_amount = (int)reader["Total_amount"];
                     orders.User_Email = (string)reader["User_Email"];
+                    orders.Paid = (string)reader["Is_Paid"];
 
                     _ordersList.Add(orders);
 
@@ -92,6 +93,7 @@ namespace FashionStore.Controllers
             int orderId = Convert.ToInt32(orderForm["OrderId"]);
             DateTime orderDate = Convert.ToDateTime(orderForm["OrderDate"]);
             string? totalAmount = orderForm["TotalAmount"];
+            string? paid = orderForm["Paid"];
             string? userEmail = orderForm["UserEmail"];
 
             List<OrderItemModel> _ordersItemListD = new List<OrderItemModel>();
@@ -120,9 +122,12 @@ namespace FashionStore.Controllers
 
             StringBuilder stringBuilder = new StringBuilder();
 
+            stringBuilder.AppendLine($"Online Fashion Store!!");
+
             stringBuilder.AppendLine($"Order ID: {orderId}");
             stringBuilder.AppendLine($"Order Date: {orderDate}");
             stringBuilder.AppendLine($"Total Amount: {totalAmount}");
+            stringBuilder.AppendLine($"Payment Status: {paid}");
             stringBuilder.AppendLine($"Email: {userEmail}");
             stringBuilder.AppendLine();
             stringBuilder.AppendLine("Order Item ID   Order ID   Product Name   Color   Size   Quantity   Price");
@@ -132,6 +137,9 @@ namespace FashionStore.Controllers
             {
                 stringBuilder.AppendLine($"{orderItem.OrderItem_Id,-14}{orderItem.Order_Id,-11}{orderItem.Product_Name,-15}{orderItem.Color,-8}{orderItem.Size,-7}{orderItem.Quantity,-10}{orderItem.Price,-8}");
             }
+
+            stringBuilder.AppendLine($"Thank You & Visit Again!!");
+
 
             byte[] fileBytes = Encoding.ASCII.GetBytes(stringBuilder.ToString());
 

@@ -42,8 +42,8 @@ CREATE TABLE Orders(
 	Order_Id INT PRIMARY KEY IDENTITY(1,1),
 	Order_Date DATETIME,
 	Total_Amount INT,
-	User_Email VARCHAR(255)
-
+	User_Email VARCHAR(255),
+	Is_Paid VARCHAR(255)
 );
 
 
@@ -65,6 +65,8 @@ CREATE TABLE OrderItem(
 	FOREIGN KEY (Order_Id) REFERENCES Orders(Order_Id)
 );
 
+DROP TABLE Colors
+DROP TABLE Size
 DROP TABLE Carts
 DROP TABLE Products
 DROP TABLE Orders
