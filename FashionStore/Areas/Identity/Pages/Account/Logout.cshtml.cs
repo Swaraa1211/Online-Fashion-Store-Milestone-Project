@@ -31,7 +31,7 @@ namespace FashionStore.Areas.Identity.Pages.Account
             _logger.LogInformation("User logged out.");
 
             //SqlConnection _connection = new SqlConnection("Data Source=5CG7324TYL;Initial Catalog = FashionDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
-            string query = "Data Source=5CG7324TYL;Initial Catalog = FashionDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string query = "Data Source=LAPTOP-PMV682K3;Initial Catalog = FashionDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
 
             string cartDeleteQuery = "DELETE FROM Carts";
