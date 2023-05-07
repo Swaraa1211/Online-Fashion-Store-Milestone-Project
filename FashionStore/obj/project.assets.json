@@ -12220,19 +12220,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\saisw\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\FashionStore.csproj",
+      "projectUniqueName": "E:\\Online Fashion Store - Milestone Project\\Online-Fashion-Store-Milestone-Project\\FashionStore\\FashionStore.csproj",
       "projectName": "FashionStore",
-      "projectPath": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\FashionStore.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\VS Code\\Online Fashion Store - Milestone Project\\FashionStore\\obj\\",
+      "projectPath": "E:\\Online Fashion Store - Milestone Project\\Online-Fashion-Store-Milestone-Project\\FashionStore\\FashionStore.csproj",
+      "packagesPath": "C:\\Users\\saisw\\.nuget\\packages\\",
+      "outputPath": "E:\\Online Fashion Store - Milestone Project\\Online-Fashion-Store-Milestone-Project\\FashionStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\saisw\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12332,7 +12332,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },

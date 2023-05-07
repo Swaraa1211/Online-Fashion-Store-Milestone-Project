@@ -28,6 +28,7 @@ namespace FashionStore.Controllers
             model.Email = Request.Form["Email"];
             //model.Subject = Request.Form["Subject"];
             model.Body = Request.Form["Body"];
+            model.PhoneNumber = Request.Form["PhoneNumber"];
 
             if (!ModelState.IsValid)
             {
@@ -43,7 +44,7 @@ namespace FashionStore.Controllers
             string from = "deeshee1211@gmail.com";
                 MailMessage message = new MailMessage(from, to);
 
-            string mailBody = model.Email + "\n" + model.Body;
+            string mailBody = model.Email+ "\n" + model.PhoneNumber + "\n" + model.Body;
                 //message.To.Add("sai.swaroopa2001@gmail.com");
             message.Subject = "Comments / Issue from " + model.Email;
                 //message.From = new MailAddress(model.Email);

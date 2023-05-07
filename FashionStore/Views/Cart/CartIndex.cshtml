@@ -77,7 +77,7 @@
 @{
     // Retrieve the count of items in the cart table
     int cartItemCount = 0;
-    string connectionString = "Data Source=5CG7324TYL;Initial Catalog = FashionDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+    string connectionString = "Data Source=LAPTOP-PMV682K3;Initial Catalog = FashionDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
     string query = "SELECT COUNT(*) FROM Carts";
 
     using (SqlConnection connection = new SqlConnection(connectionString))

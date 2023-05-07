@@ -157,18 +157,26 @@ namespace FashionStore.Controllers
             products.Product_Image = Request.Form["Product_Image"];
             products.Price = Convert.ToInt32(Request.Form["Price"]);
 
-            string addProductQuery = $"INSERT INTO Products VALUES('{products.Product_Name}','{products.Product_Description}','{products.Product_Image}','{color}','{size}',{products.Price})";
+            string addProductQuery = "INSERT INTO Products VALUES (@ProductName, @ProductDescription, @ProductImage, @Color, @Size, @Price)";
 
             try
             {
                 using (SqlCommand cmd = new SqlCommand(addProductQuery, _connection))
                 {
+                    cmd.Parameters.AddWithValue("@ProductName", products.Product_Name);
+                    cmd.Parameters.AddWithValue("@ProductDescription", products.Product_Description);
+                    cmd.Parameters.AddWithValue("@ProductImage", products.Product_Image);
+                    cmd.Parameters.AddWithValue("@Color", color);
+                    cmd.Parameters.AddWithValue("@Size", size);
+                    cmd.Parameters.AddWithValue("@Price", products.Price);
+
                     cmd.ExecuteNonQuery();
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Console.WriteLine("In Create Product");
             }
 
             return RedirectToAction("ProductIndex");
@@ -221,6 +229,10 @@ namespace FashionStore.Controllers
         public IActionResult EditProduct(int id)
         {
             Connection();
+
+            colors.Clear();
+            sizes.Clear();
+
             string selectQuery = "SELECT * FROM Colors";
             using (SqlCommand cmd = new SqlCommand(selectQuery, _connection))
             {
@@ -250,7 +262,7 @@ namespace FashionStore.Controllers
             }
 
             ViewBag.SizeList = sizes;
-            return View(GetProducts(id));
+            return View("EditProduct", GetProducts(id));
         }
 
         [HttpPost]

@@ -6,9 +6,90 @@
 @{
     int totalPrice = 0;
 }
-<div>
-    <br />
-    <br />
+<br />
+<br />
+<style>
+    .place-order {
+        font-size: 18px;
+        font-weight: bold;
+        color: #555555;
+        border: 2px solid #ffd700;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .place-order:hover {
+            background-color: #ffd700;
+            color: #ffffff;
+        }
+
+    .container1 {
+        text-align: justify;
+    }
+
+        .container1::after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+        }
+
+        .container1 dl {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 2%;
+            width: 48%;
+        }
+    .order-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        text-align: justify;
+    }
+
+        .order-container div {
+            margin-bottom: 10px;
+        }
+
+        .order-container dt {
+            font-weight: bold;
+        }
+
+        .order-container dd {
+            margin-bottom: 5px;
+        }
+
+        .order-container p {
+            font-weight: bold;
+        }
+
+        .order-container a {
+            text-decoration: none;
+        }
+
+        .order-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .order-container button:hover {
+                background-color: #0056b3;
+            }
+</style>
+<div class="order-container">
+    <div class="place-order">
+        Place Order ➡️ Confirm Order ➡️ Payment
+    </div>
+<div class="containter1">
     <dl>
         @foreach (var cartItem in @ViewBag.CartsList)
         {
@@ -22,8 +103,12 @@
     </dl>
     <p>Total Amount: @totalPrice</p>
 </div>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<button onclick="payWithRazorpay()">Pay Now</button>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <button onclick="payWithRazorpay()" class="btn btn-primary">Pay Now</button>
+</div>
+
+
+
 <script>
     function payWithRazorpay() {
         const urlParams = new URLSearchParams(window.location.search);

@@ -23,9 +23,7 @@
                                 <dd><b>Product Name:</b> <i>@products.Product_Name </i></dd>
                                 <dd><i> @products.Product_Description </i> </dd>
                                 <dd><b>Color:</b> <span style="color: @products.Color"> @products.Color </span> &nbsp; <b>Size:</b> @products.Size </dd>
-                                @*<dd>@product.Size </dd>*@
                                 <dd><b>Price:</b> ₹@products.Price </dd>
-                                @* <dd><a asp-action="EditUserProduct" asp-route-id="@product.Product_Id"><button class="btn btn-primary" type="submit">Edit</button></a></dd>*@
                                 <dd>
                                     <dl class="my-dl">
                                         <a asp-action="EditProduct" asp-route-id="@products.Product_Id"><button class="btn btn-primary" type="submit">Edit</button></a>
