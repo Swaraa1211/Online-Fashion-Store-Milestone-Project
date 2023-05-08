@@ -26,7 +26,6 @@ namespace FashionStore.Controllers
         public async Task<IActionResult> Index(GmailModel model)
         {
             model.Email = Request.Form["Email"];
-            //model.Subject = Request.Form["Subject"];
             model.Body = Request.Form["Body"];
             model.PhoneNumber = Request.Form["PhoneNumber"];
 
@@ -53,10 +52,6 @@ namespace FashionStore.Controllers
                 message.BodyEncoding = Encoding.UTF8;
                 message.IsBodyHtml = false;
 
-                //using (var smtp = new SmtpClient("smtp.gmail.com", 587))
-                //{
-                //    await smtp.SendMailAsync(message);
-                //}
 
                 SmtpClient client = new SmtpClient(); //Gmail smtp    
                 client.Host = "smtp.gmail.com";

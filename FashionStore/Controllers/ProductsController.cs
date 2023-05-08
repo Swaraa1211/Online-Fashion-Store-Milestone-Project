@@ -102,47 +102,7 @@ namespace FashionStore.Controllers
 
 
 
-        //[HttpPost]
-        //public IActionResult CreateProducts(ProductsModel model, IFormFile file)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        if (file != null && file.Length > 0)
-        //        {
-        //            // Save the file to the server
-        //            var fileName = Path.GetFileName(file.FileName);
-        //            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
-        //            using (var fileStream = new FileStream(filePath, FileMode.Create))
-        //            {
-        //                file.CopyTo(fileStream);
-        //            }
-
-        //            // Store the file path in the model
-        //            model.Product_Image = fileName;
-        //        }
-        //        Connection();
-
-        //        // Insert the product into the database
-
-        //        string query = "INSERT INTO Products (Product_Name, Product_Description, Product_Image, Color, Size, Price) " +
-        //            "VALUES (@Name, @Description, @Image, @Color, @Size, @Price)";
-        //        using (SqlCommand cmd = new SqlCommand(query, _connection))
-        //        {
-        //            cmd.Parameters.AddWithValue("@Name", model.Product_Name);
-        //            cmd.Parameters.AddWithValue("@Description", model.Product_Description);
-        //            cmd.Parameters.AddWithValue("@Image", model.Product_Image);
-        //            cmd.Parameters.AddWithValue("@Color", model.Color);
-        //            cmd.Parameters.AddWithValue("@Size", model.Size);
-        //            cmd.Parameters.AddWithValue("@Price", model.Price);
-        //            cmd.ExecuteNonQuery();
-        //        }
-
-
-
-        //    }
-        //    return RedirectToAction("ProductIndex");
-
-        //}
+        
 
         [HttpPost]
         public IActionResult CreateProducts(ProductsModel products)
@@ -208,20 +168,7 @@ namespace FashionStore.Controllers
             reader.Close();
             _connection.Close();
 
-            //using(SqlCommand  cmd = new SqlCommand(query, _connection))
-            //{
-            //    using(SqlDataReader reader = cmd.ExecuteReader())
-            //    {
-
-            //        products.Product_Name = (string)reader[1];
-            //        products.Product_Description = (string)reader[2];
-            //        products.Color = (string)reader[3];
-            //        products.Size = (string)reader[4];
-            //        products.Price = (decimal)reader[5];
-            //    }
-
-
-            //}
+            
 
             return products;
         }
@@ -272,7 +219,7 @@ namespace FashionStore.Controllers
             
             using(SqlCommand cmd = new SqlCommand("Update_Product", _connection))
             {
-                //SqlCommand cmd = new SqlCommand("UPDATE_DOCUMENT", _connection);
+                
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 string color = Request.Form["colors"].ToString();

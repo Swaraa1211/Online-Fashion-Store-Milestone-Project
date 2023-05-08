@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Online Fashion Store - Milestone Project\\Online-Fashion-Store-Milestone-Project\\FashionStoreAPI\\FashionStoreAPI.csproj": {}
+    "C:\\Users\\Hp\\Desktop\\VS Code\\Online-Fashion-Store-Milestone-Project\\FashionStoreAPI\\FashionStoreAPI.csproj": {}
   },
   "projects": {
-    "E:\\Online Fashion Store - Milestone Project\\Online-Fashion-Store-Milestone-Project\\FashionStoreAPI\\FashionStoreAPI.csproj": {
+    "C:\\Users\\Hp\\Desktop\\VS Code\\Online-Fashion-Store-Milestone-Project\\FashionStoreAPI\\FashionStoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Online Fashion Store - Milestone Project\\Online-Fashion-Store-Milestone-Project\\FashionStoreAPI\\FashionStoreAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Hp\\Desktop\\VS Code\\Online-Fashion-Store-Milestone-Project\\FashionStoreAPI\\FashionStoreAPI.csproj",
         "projectName": "FashionStoreAPI",
-        "projectPath": "E:\\Online Fashion Store - Milestone Project\\Online-Fashion-Store-Milestone-Project\\FashionStoreAPI\\FashionStoreAPI.csproj",
-        "packagesPath": "C:\\Users\\saisw\\.nuget\\packages\\",
-        "outputPath": "E:\\Online Fashion Store - Milestone Project\\Online-Fashion-Store-Milestone-Project\\FashionStoreAPI\\obj\\",
+        "projectPath": "C:\\Users\\Hp\\Desktop\\VS Code\\Online-Fashion-Store-Milestone-Project\\FashionStoreAPI\\FashionStoreAPI.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hp\\Desktop\\VS Code\\Online-Fashion-Store-Milestone-Project\\FashionStoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\saisw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
