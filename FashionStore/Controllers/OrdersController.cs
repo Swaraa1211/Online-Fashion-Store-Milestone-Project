@@ -32,17 +32,9 @@ namespace FashionStore.Controllers
         public IActionResult OrderIndex()
         {
             Connection();
-
-            //ProductsModel products = new ProductsModel();
-            
-            
-
+                       
             string query = $"Select * from Orders";
 
-            //string query = $"SELECT o.Order_Id, o.Order_Date, o.Payment, o.User_Email, oi.Product_name, oi.Quantity, oi.Price, p.Color, p.Size"+
-            //    "FROM Orders o"+ 
-            //    "INNER JOIN OrderItem oi ON o.Order_Id = oi.Order_Id" + 
-            //    "INNER JOIN Products p ON oi.Product_Id = p.Product_Id;";
 
             using (SqlCommand cmd = new SqlCommand(query, _connection))
             {
@@ -53,12 +45,6 @@ namespace FashionStore.Controllers
                     orders.Order_Id = (int)reader["Order_Id"];
                     orders.Order_Date = (DateTime)reader["Order_Date"];
                     orders.Total_amount = (int)reader["Total_amount"];
-                    //orders.Payment = (bool)reader[0];
-                    //orders.Product_Name = (string)reader[0];
-                    //orders.Quantity = (int)reader[0];
-                    //orders.Price = (int)reader[0];
-                    //orders.Products.Color = (string)reader[0];
-                    //orders.Products.Size = (string)reader[0];
                     orders.Paid = (string)reader["Is_Paid"];
                     orders.User_Email = (string)reader["User_Email"];
 

@@ -234,28 +234,7 @@ namespace FashionStore.Controllers
                     reader.Close();
                 }
 
-                //string color = "";
-                //string size = "";
-
-                //string query = $"SELECT p.Product_name, p.Color, p.Size, c.Quantity, c.Price" +
-                //                "FROM Products p INNER JOIN Carts c ON p.Product_Id = c.Product_Id;";
-
-                //using (SqlCommand sqlCommand = new SqlCommand(query, _connection))
-                //{
-                //    SqlDataReader reader = sqlCommand.ExecuteReader();
-                //    if (reader.Read())
-                //    {
-                //        color = (string)reader["Color"];
-
-                //        size = (string)reader["Size"];
-                //    }
-                //    reader.Close();
-                //}
-
-                // Insert data into OrderItem table
-                //string orderItemQuery = "INSERT INTO OrderItem (Order_Id, Product_Id, Product_name, Color, Size, Quantity, Price, User_Email) " +
-                //                "SELECT @OrderId, Product_Id, Product_Name,  Quantity, Price, @UserEmail FROM Carts"+
-                //                "SELECT @Color, @Size, FROM Products";
+               
 
                 string orderItemQuery = "INSERT INTO OrderItem (Order_Id, Product_Id, Product_name, Color, Size, Quantity, Price, User_Email) " +
                             "SELECT @OrderId, C.Product_Id, P.Product_name, P.Color, P.Size, C.Quantity, P.Price, @UserEmail " +
@@ -264,14 +243,11 @@ namespace FashionStore.Controllers
 
 
 
-                //string orderItemQuery = "INSERT INTO OrderItem (Order_Id, Product_Id, Product_name,Color,Size, Quantity, Price, User_Email) " +
-                //                        "SELECT @OrderId, Product_Id, Product_Name,Color,Size, Quantity, Price, @UserEmail FROM Carts";
                 using (SqlCommand sqlCommand = new SqlCommand(orderItemQuery, _connection))
                 {
                     sqlCommand.Parameters.AddWithValue("@OrderId", orderId);
                     sqlCommand.Parameters.AddWithValue("@UserEmail", userEmail);
-                    //sqlCommand.Parameters.AddWithValue("@Color", color);
-                    //sqlCommand.Parameters.AddWithValue("@Size", size);
+
 
                     sqlCommand.ExecuteNonQuery();
                 }
@@ -287,26 +263,12 @@ namespace FashionStore.Controllers
 
       
 
-        //public ActionResult OrderAmountDeleteCart()
-        //{
-        //    return View();
-        //}
-
         [HttpPost]
         public IActionResult OrderAmountDeleteCart( int orderId)
         {
             Connection();
 
-            //string query = "INSERT INTO Orders (Total_Amount) " +
-            //"VALUES (@Amount)";
-
-            //string query = "Update Orders ";
-            //using (SqlCommand cmd = new SqlCommand(query, _connection))
-            //{
-            //    cmd.Parameters.AddWithValue("@Amount", amount);
-            //    cmd.ExecuteNonQuery();
-            //}
-
+        
             //updating is paid or not
             Console.WriteLine("OrderIdfromrazor " + orderId);
             //Console.WriteLine("Amount " + amount);
@@ -363,40 +325,7 @@ namespace FashionStore.Controllers
         }
 
 
-        //public IActionResult PlaceOrder(string userEmail)
-        //{
-        //    Connection();
-
-        //    string query = "INSERT INTO Orders (Order_Date, User_Email) VALUES (@OrderDate, @UserEmail)";
-        //    using (SqlCommand sqlCommand = new SqlCommand(query, _connection))
-        //    {
-        //        sqlCommand.Parameters.AddWithValue("@OrderDate", DateTime.Now);
-        //        sqlCommand.Parameters.AddWithValue("@UserEmail", userEmail);
-        //        sqlCommand.ExecuteNonQuery();
-        //    }
-
-        //    List<CartModel> _cartList = new List<CartModel>();
-        //    query = "Select * from Carts";
-        //    using (SqlCommand sqlCommand = new SqlCommand(query, _connection))
-        //    {
-        //        SqlDataReader reader = sqlCommand.ExecuteReader();
-        //        while (reader.Read())
-        //        {
-        //            CartModel cart = new CartModel();
-        //            cart.Cart_Id = (int)reader["Cart_Id"];
-        //            cart.Product_Name = (string)reader["Product_Name"];
-        //            cart.Quantity = (int)reader["Quantity"];
-        //            cart.Price = (int)reader["Price"];
-
-        //            _cartList.Add(cart);
-        //        }
-        //        reader.Close();
-        //    }
-
-        //    ViewBag.CartsList = _cartList;
-
-        //    return View("CartIndex", ViewBag);
-        //}
+        
 
     }
 }
