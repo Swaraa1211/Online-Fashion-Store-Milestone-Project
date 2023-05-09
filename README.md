@@ -9,7 +9,11 @@ You can purchase, make payment and the products will be delivered within a week.
 
 ----------------------------
 Features->
-&nbsp; *Admin: 
+<br>
+&nbsp; **Admin:** 
+<br>
 &nbsp;&nbsp; -Create a product, Edit or Update a product and can delete a product, Create
+<br>
 &nbsp;&nbsp; -Add or Delete the Color
+<br>
 &nbsp;&nbsp; -Add or Delete the Size
