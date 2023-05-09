@@ -56,32 +56,7 @@ namespace FashionStore.Controllers
 
             return View(_ProductsList);
 
-            //Connection();
-
-            //string query = "Select * from Products";
-            //using (SqlCommand sqlCommand = new SqlCommand(query, _connection))
-            //{
-            //    SqlDataReader reader = sqlCommand.ExecuteReader();
-            //    while (reader.Read())
-            //    {
-            //        ProductsModel products = new ProductsModel();
-            //        products.Product_Id = (int)reader["Product_Id"];
-            //        products.Product_Name = (string)reader["Product_Name"];
-            //        products.Product_Description = (string)reader["Product_Description"];
-            //        products.Color = (string)reader["Color"];
-            //        products.Size = (string)reader["Size"];
-            //        products.Price = (decimal)reader["Price"];
-
-            //        _ProductsList.Add(products);
-
-            //    }
-            //    reader.Close();
-            //}
-
-            //ViewBag.ProductsList = _ProductsList;
-
-
-            //return View(ViewBag);
+            
         }
 
         public ProductsModel GetProducts(int id)
@@ -108,26 +83,6 @@ namespace FashionStore.Controllers
             }
             reader.Close();
             _connection.Close();
-
-            //ProductsModel products = new ProductsModel();
-
-            //string query = $"Select Color, Size from Products where Product_Id = {id}";
-
-            //Console.WriteLine("product id" + id);
-
-            //SqlCommand cmd = _connection.CreateCommand();
-
-            //cmd.CommandText = query;
-            //SqlDataReader reader = cmd.ExecuteReader();
-            //while (reader.Read())
-            //{
-            //    //products.Color = (string)reader[3];
-            //    //products.Size = (string)reader[4];
-            //    products.Color = (string)reader["Color"];
-            //    products.Size = (string)reader["Size"];
-            //}
-            //reader.Close();
-            //_connection.Close();
 
 
             return products;
@@ -181,7 +136,7 @@ namespace FashionStore.Controllers
 
             using (SqlCommand cmd = new SqlCommand("Update_Product_User", _connection))
             {
-                //SqlCommand cmd = new SqlCommand("UPDATE_DOCUMENT", _connection);
+                
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 string color = Request.Form["colors"].ToString();
@@ -231,7 +186,6 @@ namespace FashionStore.Controllers
             else
             {
                 
-                //string updateQuery = "Update Cart Set Quantity =";
                 try
                 {
                     string insertQuery = "INSERT INTO Carts (Product_Id, Product_name, Quantity, Price) VALUES (@product_id, @product_name, 1, @price)";
@@ -239,9 +193,7 @@ namespace FashionStore.Controllers
                     {
                         cmd.Parameters.AddWithValue("@product_id", product_id);
                         cmd.Parameters.AddWithValue("@product_name", product_name);
-                        //cmd.Parameters.AddWithValue("@quantity", quantity);
                         cmd.Parameters.AddWithValue("@price", price);
-                        //cmd.Parameters.AddWithValue("@email", email);
                         cmd.ExecuteNonQuery();
                     }
                     TempData["Message"] = "Added to Cart";
@@ -255,7 +207,7 @@ namespace FashionStore.Controllers
             }
 
             // Render the view with the message
-            //return View("UserProductIndex");
+         
             return RedirectToAction("UserProductIndex", "UserProduct");
         }
 
