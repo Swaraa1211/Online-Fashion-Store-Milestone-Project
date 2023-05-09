@@ -9,15 +9,17 @@ You can purchase, make payment and the products will be delivered within a week.
 
 ----------------------------
 # Features
-<br>
+
 1.&nbsp; **Admin:**
 <br>
  &nbsp;&nbsp;The admin has the authority to perform essential tasks such as creating, editing, and deleting products. They have control over the inventory and can manage the product catalog to ensure accurate and up-to-date information is available to users.
  <br>
+ 
 2.&nbsp; **User:**
 <br>
  &nbsp;&nbsp;Users, on the other hand, have specific privileges within the fashion store system. They can edit color and size options for products, allowing them to customize their preferences based on availability. Additionally, users have the ability to add selected items to their cart, creating a personalized shopping experience.
  <br>
+ 
 3.&nbsp; **Add to Cart:**
 <br>
  &nbsp;&nbsp;The cart feature provides users with the flexibility to review their selected items, add or reduce quantities, and remove products they no longer wish to purchase. Once users are satisfied with their selection, they can proceed to the checkout process to complete their order. This involves providing necessary details such as shipping address and selecting a payment method.
