@@ -37,4 +37,4 @@ Features->
  ------------------------------------
  DB Schema
  ------------
- ![Image](/DB/DB Design.png)
+ ![Image](/DB/DBDesign.png)
